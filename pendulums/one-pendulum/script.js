@@ -2,7 +2,8 @@ let pendulum;
 let bg = '#000000';
 
 function setup() {
-    createCanvas(1920, 1080);
+    // createCanvas(1920, 1080);
+    createCanvas(window.innerWidth, window.innerHeight);
     background(bg);
     let len = height / 2;
     pendulum = new Pendulum(len);

@@ -3,7 +3,8 @@ let pendulums = [];
 let bg = '#000000';
 
 function setup() {
-    createCanvas(1920, 1080);
+    createCanvas(window.innerWidth, window.innerHeight);
+    // createCanvas(1920, 1080);
     background(bg);
 
     let len = 100;
