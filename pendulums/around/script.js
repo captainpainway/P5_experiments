@@ -7,7 +7,7 @@ let bg = '#2d0425';
 let stopframe = 1000;
 
 function setup() {
-    createCanvas(3840, 2160);
+    createCanvas(window.innerWidth, window.innerHeight);
     colorMode(HSL, 255);
     background(bg);
 
@@ -18,7 +18,7 @@ function setup() {
         let col = lerpColor(color(col1), color(col2), i / max_pendulums);
         pendulums.push(new Pendulum(i, len, col, stopframe));
         if (i % 2 !== 0) {
-            len += (height - 210) / max_pendulums;
+            len += (height - (height / 20)) / max_pendulums;
             stopframe += 100 * (i + 1);
         }
     }

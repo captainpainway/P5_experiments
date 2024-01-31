@@ -7,13 +7,14 @@ let bg = '#2a5980';
 let stopframe = 1500;
 
 function setup() {
-    createCanvas(3840, 2160);
+    createCanvas(window.innerWidth, window.innerHeight);
+    // createCanvas(3840, 2160);
     background(bg);
 
     let len = 10;
     for (let i = 0; i < max_pendulums; i++) {
         pendulums.push(new Pendulum(i, len, stopframe));
-        len += (height - 210) / max_pendulums;
+        len += (height - (height / 10)) / max_pendulums;
         stopframe += 100 * (i + 1);
     }
 }
@@ -77,7 +78,7 @@ class Pendulum {
         } else {
             stroke('rgba(163,194,218,0.6)');
         }
-        strokeWeight(5);
+        strokeWeight(3);
         noFill();
         let multiplier = 3;
         point(this.bob.x, this.bob.y);

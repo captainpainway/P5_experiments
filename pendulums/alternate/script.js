@@ -8,7 +8,8 @@ let stopframe = 1000;
 let colors = ['#FEFAE0', '#A1B46A', '#C5D19A', '#E9EDC9', '#FAEDCD', '#DDB892']
 
 function setup() {
-    createCanvas(3840, 2160);
+    createCanvas(window.innerWidth, window.innerHeight);
+    // createCanvas(3840, 2160);
     colorMode(HSL, 255);
     background(bg);
 
@@ -16,7 +17,7 @@ function setup() {
     for (let i = 0; i < max_pendulums; i++) {
         let col = colors.pop();
         pendulums.push(new Pendulum(i, len, col, stopframe));
-        len += (height / 2 - 210) / max_pendulums;
+        len += (height / 2 - (height / 10)) / max_pendulums;
         stopframe += 100 * (i + 1);
         colors.unshift(col);
     }
