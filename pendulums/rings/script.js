@@ -1,4 +1,4 @@
-let max_pendulums = 10;
+let max_pendulums = window.innerWidth / 100;
 let pendulums = [];
 let started = false;
 let time = 0;
